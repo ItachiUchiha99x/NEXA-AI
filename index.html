@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b14" />
+  <title>NEXA AI — Your Intelligence, Reimagined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">N</span><span>NEXA<span class="brand-ai">AI</span><small>INTELLIGENCE SYSTEM</small></span></a>
+      <button class="new-chat" id="newChat"><span>＋</span> New conversation</button>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="chat"><span>◈</span> AI Assistant</button>
+      <button class="nav-item" data-view="image"><span>▧</span> Image Studio</button>
+      <button class="nav-item" data-view="voice"><span>◉</span> Live Voice</button>
+      <button class="nav-item" data-view="weather"><span>⌁</span> Weather</button>
+      <div class="side-label tools-label">QUICK COMMANDS</div>
+      <button class="command" data-command="/developer"><kbd>/developer</kbd><span>Developer profile</span></button>
+      <button class="command" data-command="/discord"><kbd>/discord</kbd><span>Community server</span></button>
+      <div class="sidebar-bottom">
+        <div class="status"><i></i><span>Systems operational</span></div>
+        <div class="user-mini"><div class="avatar">R</div><div><b>MD Riyad Ahammed</b><small>Project creator</small></div></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div><div class="eyebrow">PERSONAL AI WORKSPACE</div><div class="top-title" id="topTitle">AI Assistant</div></div>
+        <div class="top-actions"><span class="clock" id="liveClock">--:--:--</span><span class="model-pill"><i></i> NEXA CORE</span><button class="icon-btn" id="clearChat" title="Clear chat">⌫</button></div>
+      </header>
+
+      <section class="view active" id="chatView">
+        <div class="welcome" id="welcome">
+          <div class="orb-wrap"><div class="orb"><div class="orb-core"></div><span class="orb-ring ring-one"></span><span class="orb-ring ring-two"></span></div></div>
+          <div class="eyebrow center">YOUR AI. YOUR UNIVERSE.</div>
+          <h1>Think beyond.<br><span>Build with NEXA.</span></h1>
+          <p class="welcome-sub">A smarter space to ask, create, explore and get things done.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain how artificial intelligence works in simple Bangla."><b>✳ Learn something</b><small>Make complex ideas simple</small></button>
+            <button class="suggestion" data-prompt="Give me a creative idea for a web development project."><b>⌘ Build a project</b><small>Turn an idea into a plan</small></button>
+            <button class="suggestion" data-prompt="Write a short cinematic anime-style caption."><b>✧ Get creative</b><small>Captions, concepts and more</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="promptInput" rows="1" placeholder="Message NEXA..."></textarea>
+            <div class="composer-tools"><span class="hint">Enter to send · Shift + Enter for new line</span><div><button class="tool-btn" id="voiceShortcut" title="Open voice">◉</button><button class="send-btn" id="sendBtn" title="Send">↑</button></div></div>
+          </div>
+          <p class="disclaimer">NEXA can make mistakes. Verify important information.</p>
+        </div>
+      </section>
+
+      <section class="view tool-view" id="imageView">
+        <div class="tool-heading"><div class="eyebrow">CREATIVE ENGINE</div><h1>Image <span>Studio</span></h1><p>Describe your vision. Let NEXA turn it into an image.</p></div>
+        <div class="tool-card"><label for="imagePrompt">IMAGE DESCRIPTION</label><textarea id="imagePrompt" rows="4" placeholder="A futuristic city floating above the clouds, cinematic lighting, ultra detailed..."></textarea><div class="tool-card-bottom"><span>Be descriptive for better results</span><button class="primary-btn" id="generateImage">✦ Generate image</button></div></div>
+        <div class="image-result" id="imageResult"><div class="empty-art">✧<span>Your creation will appear here</span></div></div>
+      </section>
+
+      <section class="view tool-view" id="voiceView">
+        <div class="tool-heading"><div class="eyebrow">REAL-TIME CONVERSATION</div><h1>Live <span>Voice</span></h1><p>Talk naturally with NEXA using a live voice session.</p></div>
+        <div class="voice-card"><div class="voice-orb" id="voiceOrb"><div></div></div><div class="voice-status" id="voiceStatus">Ready when you are</div><p>Allow microphone access when your browser asks.</p><button class="primary-btn" id="startVoice">◉ Start voice session</button><button class="stop-btn hidden" id="stopVoice">End session</button><div class="voice-note" id="voiceNote">Requires an OpenAI API key with Realtime API access.</div></div>
+      </section>
+
+      <section class="view tool-view" id="weatherView">
+        <div class="tool-heading"><div class="eyebrow">LIVE CONDITIONS</div><h1>Weather <span>Desk</span></h1><p>Check current weather for a city anywhere in the world.</p></div>
+        <div class="weather-search"><input id="cityInput" placeholder="Enter a city, e.g. Dhaka" value="Dhaka"><button class="primary-btn" id="getWeather">Check weather</button></div>
+        <div class="weather-result" id="weatherResult"><div class="empty-art">⌁<span>Weather information will appear here</span></div></div>
+      </section>
+
+      <footer class="footer">Built with curiosity by <b>MD RIYAD AHAMMED</b><span>·</span> Powered by NEXA AI</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/realtime-voice.js"></script>
+</body>
+</html>
